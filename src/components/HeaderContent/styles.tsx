@@ -38,6 +38,12 @@ export const Content = styled.div`
             padding: 0.7rem 1rem;
             border-radius: 0.2rem;
             margin: 0.5rem;
+            transition: 0.4s;
+
+            &:hover {
+                background-color: #5C16C5;
+                color: #fff;
+            }
         }
     }
 `
