@@ -1,11 +1,18 @@
 import FilmImg from '../../assets/img.png'
 
-export function FilmItem() {
+interface FilmItemProps {
+    films: {
+        title: string,
+        release_date: string,
+    }
+}
+
+export function FilmItem({ films }:FilmItemProps) {
     return (
         <article>
                 <a><img src={FilmImg} alt="Capa do filme" /></a>
-                <p>Espíritos Obscuros</p>
-                <span>24 NOV 2021</span>
+                <p>{films.title}</p>
+                <span>{films.release_date}</span>
         </article>
     )
 }

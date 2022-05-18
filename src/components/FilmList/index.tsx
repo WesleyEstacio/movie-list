@@ -1,41 +1,28 @@
+import { useState } from "react";
 import { FilmItem } from "../FilmItem";
 import { Container } from "./styles";
 
+interface Films {
+    title: string,
+    release_date: string,
+}
+
 export function FilmList() {
+
+    const [films,setFilms] = useState<Films[]>([])
 
     function handleFetchApi() {
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=c908cc361daab221ef316ddff3c6e5dc')
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            setFilms(data.results)
+        })
     }
 
-    
     return (
         <Container>
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
-            <FilmItem />
+            {films.map(films => <FilmItem key={films.title} films={films}/>)}
+
             <button onClick={handleFetchApi}>Teeste</button>
         </Container>
     )

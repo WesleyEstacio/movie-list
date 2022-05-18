@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Container = styled.main`
     max-width: 1280px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-around; 
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    
 
     article {
-        margin: 1.5rem 0.5rem 2rem;
+        margin: 2rem 0.25rem 1rem;
         
         a {
             cursor: pointer;
