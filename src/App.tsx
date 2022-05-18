@@ -1,3 +1,4 @@
+import { FilmDetails } from "./components/FilmDetails";
 import { FilmList } from "./components/FilmList";
 import { Footer } from "./components/Footer";
 import { HeaderContent } from "./components/HeaderContent";
@@ -9,9 +10,11 @@ export function App() {
   return (
     <>
       <HeaderLogo />
-      <HeaderContent />
+      <FilmDetails />
+
+      {/* <HeaderContent />
       <FilmList />
-      <Footer />
+      <Footer /> */}
 
       <GlobalStyle />
     </>  
