@@ -8,21 +8,27 @@ export const Container = styled.main`
     
 
     article {
-        margin: 2rem 0.25rem 1rem;
+        margin: 2rem 0.5rem 1rem;
         
         a {
             cursor: pointer;
+            
+            img {
+                width: 100%;
+            }
         }
 
         p {
             font-weight: bold;
             font-size: 16px;
+            color: #222;
         }
 
         span {
             color: #646464;
             font-weight: bold;
             font-size: 14px;
-        }
+            text-transform: uppercase;
+        } 
     }
 `
