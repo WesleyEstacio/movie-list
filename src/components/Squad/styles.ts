@@ -24,6 +24,8 @@ export const Container = styled.div`
 
             &:nth-of-type(1) {
                 font-weight: bold;
+                font-size: 0.80rem;
+                padding: 0.2rem 0;
             }
         }
 
