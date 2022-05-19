@@ -6,11 +6,29 @@ export const Container = styled.div`
     padding: 0 2%;
 
     h1 {
-        margin: 4rem 0;
+        margin: 4rem 0 2rem;
         font-size: 28px;
     }
 
-    .teste {
-        width: 100%;
+    .carousel {
+        text-align: center;
+        background-color: #fff;
+        padding: 1.2rem 1rem;
+        margin: 0 0.5rem;
+
+        p {
+            text-align: left;
+            width: 100%;
+            margin: 0 auto;
+            font-size: 0.75rem;
+
+            &:nth-of-type(1) {
+                font-weight: bold;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
     }
 `

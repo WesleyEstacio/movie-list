@@ -15,7 +15,7 @@ export const Content = styled.header`
 
     img {
         width: 40%;
-        padding: 0 2rem;
+        padding-right: 2rem;
     }
 
     section {
