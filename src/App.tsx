@@ -10,11 +10,11 @@ export function App() {
   return (
     <>
       <HeaderLogo />
-      <FilmDetails />
+      {/* <FilmDetails /> */}
 
-      {/* <HeaderContent />
+      <HeaderContent />
       <FilmList />
-      <Footer /> */}
+      <Footer />
 
       <GlobalStyle />
     </>  
