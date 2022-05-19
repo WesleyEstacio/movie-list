@@ -9,6 +9,11 @@ export const Container = styled.main`
 
     article {
         margin: 2rem 0.5rem 1rem;
+
+        &:hover {
+            position: relative;
+            bottom: 1rem;
+        }
         
         a {
             cursor: pointer;
