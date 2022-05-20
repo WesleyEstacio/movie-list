@@ -8,4 +8,8 @@ export const Content = styled.div`
     max-width: 1100px;
     margin: 0 auto;
     padding: 0.6rem;
+
+    img {
+        cursor: pointer;
+    }
 `

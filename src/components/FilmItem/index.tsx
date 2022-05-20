@@ -7,19 +7,22 @@ interface FilmItemProps {
         poster_path: string,
         id: number,
     }
+
+    onOpenFilmDetail: () => void
 }
 
-export function FilmItem({ films }:FilmItemProps) {
+export function FilmItem({ films, onOpenFilmDetail }:FilmItemProps) {
 
-    const [filmDetails, setFilmDetails] = useState(0)
+    const [filmDetails, setFilmDetails] = useState(films.id)
 
     function handleOpenFilmDetails() {
         setFilmDetails(films.id)
+        console.log(filmDetails)
     }
 
     return (
         <article 
-            onClick={handleOpenFilmDetails}
+            onClick={onOpenFilmDetail}
         >
                 <a><img src={`https://image.tmdb.org/t/p/w500/${films.poster_path}`} alt="Capa do filme" /></a>
                 <p>{films.title}</p>
