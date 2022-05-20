@@ -11,11 +11,15 @@ export function App() {
   return (
     <FilmsProvider>
       <HeaderLogo />
-      {/* <FilmDetails /> */}
-
       <HeaderContent />
+
       <FilmList />
+
+      <FilmDetails />
+
       <Footer />
+
+
 
       <GlobalStyle />
     </FilmsProvider>  

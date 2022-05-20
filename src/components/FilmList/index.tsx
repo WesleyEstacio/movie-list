@@ -9,7 +9,7 @@ export function FilmList() {
 
     return (
         <Container>
-            {films.map(films => <FilmItem key={films.title} films={films}/>)}
+            {films.map(films => <FilmItem key={films.id} films={films}/>)}
         </Container>
     )
 }
