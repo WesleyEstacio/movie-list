@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 interface FilmItemProps {
     films: {
@@ -9,20 +9,19 @@ interface FilmItemProps {
     }
 
     onOpenFilmDetail: () => void
+    setFilmID: (id: number) => void
 }
 
-export function FilmItem({ films, onOpenFilmDetail }:FilmItemProps) {
+export function FilmItem({ films, onOpenFilmDetail, setFilmID }:FilmItemProps) {
 
-    const [filmDetails, setFilmDetails] = useState(films.id)
-
-    function handleOpenFilmDetails() {
-        setFilmDetails(films.id)
-        console.log(filmDetails)
+    function catchId() {
+        setFilmID(films.id)
+        onOpenFilmDetail()
     }
 
     return (
         <article 
-            onClick={onOpenFilmDetail}
+            onClick={catchId}
         >
                 <a><img src={`https://image.tmdb.org/t/p/w500/${films.poster_path}`} alt="Capa do filme" /></a>
                 <p>{films.title}</p>
