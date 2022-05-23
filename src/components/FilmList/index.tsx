@@ -18,18 +18,33 @@ interface Details {
     runtime: number,
 }
 
+interface Credits {
+    name: string,
+    character: string,
+    profile_path: string,
+}
+
 export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
 
     const films = useContext(FilmsContext)
-    const [filmID, setFilmID] = useState(0)
+    const [filmID, setFilmID] = useState(675353)
     const [details, setDetails] = useState<Details>({} as Details)
+    const [credits, setCredits] = useState<Credits>({} as Credits)
 
     useEffect(()=> {
-        fetch(`https://api.themoviedb.org/3/movie/${filmID}?api_key=c908cc361daab221ef316ddff3c6e5dc&language=PT-BR`)
+        fetch(`https://api.themoviedb.org/3/movie/${filmID}?api_key=c908cc361daab221ef316ddff3c6e5dc&language=pt-BR`)
         .then(response => response.json())
         .then(data => {
             setDetails(data)
-            console.log(data)
+        })
+    }, [filmID])
+
+    useEffect(()=> {
+        fetch(`https://api.themoviedb.org/3/movie/${filmID}/credits?api_key=c908cc361daab221ef316ddff3c6e5dc`)
+        .then(response => response.json())
+        .then(data => {
+            setCredits(data.cast)
+            console.log(credits)
         })
     }, [filmID])
 
@@ -48,7 +63,7 @@ export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
                     }
                 </Container>
             :
-                <FilmDetails details={details}/>
+                <FilmDetails details={details} />
         }
         </>
     )
