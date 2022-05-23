@@ -17,7 +17,7 @@ export function FilmsProvider({ children }: FilmsProviderProps) {
     const [films,setFilms] = useState<Films[]>([])
 
     useEffect( ()=> {
-        fetch('https://api.themoviedb.org/3/movie/popular?api_key=c908cc361daab221ef316ddff3c6e5dc')
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=c908cc361daab221ef316ddff3c6e5dc&language=PT-BR')
         .then(response => response.json())
         .then(data => {
             setFilms(data.results)

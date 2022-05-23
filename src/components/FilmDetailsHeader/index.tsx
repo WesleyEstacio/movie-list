@@ -1,16 +1,32 @@
-import foto from '../../assets/teste.png'
 import { Container, Content } from './styles'
 
-export function FilmDetailsHeader() {
+interface FilmDetailsProps {
+    details: {
+        title: string,
+        release_date: string,
+        poster_path: string,
+        overview: string,
+        
+        runtime: number,
+    }
+}
+
+export function FilmDetailsHeader({ details }: FilmDetailsProps) {   
+
     return (
         <Container>
             <Content>
-                <img src={foto} /> 
+                <img src={`https://image.tmdb.org/t/p/w500/${details.poster_path}`} /> 
 
                 <section>
-                    <h2>Deadpool (2016)</h2>
+                    <h2>{details.title}</h2>
                     
-                    <p>16 anos  • 11/02/2016 (BR)  •  Ação, Aventura, Comédia, Ficção científica • 1h 47m</p>
+                    <p>
+                        FAIXA ETARIA  • 
+                        {details.release_date} (BR)  •  
+                        TIPO  • 
+                        {details.runtime} Minutos
+                    </p>
 
                     <article>
                         <h3>76%</h3>
@@ -18,7 +34,7 @@ export function FilmDetailsHeader() {
                     </article>
 
                     <h3>Sinopse</h3>
-                    <p>Baseado no anti-herói não convencional da Marvel Comics, Deadpool conta a história da origem do ex-agente das Forças Especiais que se tornou o mercenário Wade Wilson. Depois de ser submetido a um desonesto experimento que o deixa com poderes de cura acelerada, Wade adota o alter ego de Deadpool. Armado com suas novas habilidades e um senso de humor negro e distorcido, Deadpool persegue o homem que quase destruiu sua vida.</p>
+                    <p>{details.overview}</p>
 
                     <article>
                         <div>

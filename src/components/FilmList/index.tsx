@@ -9,14 +9,23 @@ interface FilmListProps {
     isOpenDetail: boolean,
 }
 
+interface Details {
+    title: string,
+    release_date: string,
+    poster_path: string,
+    overview: string,
+
+    runtime: number,
+}
+
 export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
 
     const films = useContext(FilmsContext)
     const [filmID, setFilmID] = useState(0)
-    const [details, setDetails] = useState()
+    const [details, setDetails] = useState<Details>({} as Details)
 
     useEffect(()=> {
-        fetch(`https://api.themoviedb.org/3/movie/${filmID}?api_key=c908cc361daab221ef316ddff3c6e5dc`)
+        fetch(`https://api.themoviedb.org/3/movie/${filmID}?api_key=c908cc361daab221ef316ddff3c6e5dc&language=PT-BR`)
         .then(response => response.json())
         .then(data => {
             setDetails(data)
@@ -39,7 +48,7 @@ export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
                     }
                 </Container>
             :
-                <FilmDetails />
+                <FilmDetails details={details}/>
         }
         </>
     )
