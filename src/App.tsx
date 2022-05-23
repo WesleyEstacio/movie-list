@@ -5,7 +5,7 @@ import { Footer } from "./components/Footer";
 import { HeaderContent } from "./components/HeaderContent";
 import { HeaderLogo } from "./components/HeaderLogo";
 import { GlobalStyle } from "./styles/Global";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 export function App() {
 
@@ -22,23 +22,14 @@ export function App() {
   return (
     <FilmsProvider>
       <HeaderLogo onCloseFilmDetail={handleCloseFilmDetail}/>
-
-      {!isOpenDetails 
-      ? 
-        <>
-          <HeaderContent />
-          <FilmList 
-            onOpenFilmDetail={handleOpenFilmDetail}
-          />
-          <Footer />
-        </>
-      :
-        <FilmDetails />
-      }
-
-      
-
-      
+        
+      <HeaderContent />
+      <FilmList 
+        onOpenFilmDetail={handleOpenFilmDetail}
+        isOpenDetail={isOpenDetails}
+      />
+      <Footer />
+        
 
       <GlobalStyle />
     </FilmsProvider>  

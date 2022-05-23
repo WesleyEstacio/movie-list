@@ -1,19 +1,28 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FilmsContext } from "../../FilmsContext";
+import { FilmDetails } from "../FilmDetails";
 import { FilmItem } from "../FilmItem";
 import { Container } from "./styles";
 
 interface FilmListProps {
-    onOpenFilmDetail: () => void
+    onOpenFilmDetail: () => void,
+    isOpenDetail: boolean
 }
 
-export function FilmList({ onOpenFilmDetail }: FilmListProps) {
+export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
 
     const films = useContext(FilmsContext)
 
     return (
-        <Container>
-            {films.map(films => <FilmItem key={films.id} films={films} onOpenFilmDetail={onOpenFilmDetail} />)}
-        </Container>
+        <>
+        {!isOpenDetail
+            ?
+                <Container>
+                    {films.map(films => <FilmItem key={films.id} films={films} onOpenFilmDetail={onOpenFilmDetail} />)}
+                </Container>
+            :
+                <FilmDetails />
+        }
+        </>
     )
 }
