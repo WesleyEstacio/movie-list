@@ -2,19 +2,15 @@ import { Slider } from "../Slider";
 import { Container } from "./styles";
 
 interface SquadProps {
-    credits: {
-        original_name: string,
-        character: string,
-        profile_path: string,
-    }
+    filmID: number
 }
 
-export function Squad({credits}: SquadProps) {
+export function Squad({ filmID }: SquadProps) {
 
     return (
         <Container>
             <h1>Elenco original </h1>
-            <Slider credits={credits}/>
+            <Slider filmID={filmID}/>
         </Container>
     )
 }

@@ -18,18 +18,14 @@ interface Details {
     runtime: number,
 }
 
-interface Credits {
-    original_name: string,
-    character: string,
-    profile_path: string,
-}
+
 
 export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
 
     const films = useContext(FilmsContext)
     const [filmID, setFilmID] = useState(675353)
     const [details, setDetails] = useState<Details>({} as Details)
-    const [credits, setCredits] = useState<Credits[]>([])
+    
 
     useEffect(()=> {
         fetch(`https://api.themoviedb.org/3/movie/${filmID}?api_key=c908cc361daab221ef316ddff3c6e5dc&language=pt-BR`)
@@ -39,13 +35,7 @@ export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
         })
     }, [filmID])
 
-    useEffect(()=> {
-        fetch(`https://api.themoviedb.org/3/movie/${filmID}/credits?api_key=c908cc361daab221ef316ddff3c6e5dc`)
-        .then(response => response.json())
-        .then(data => {
-            setCredits(data.cast)
-        })
-    }, [filmID])
+    
 
     return (
         <>
@@ -62,7 +52,7 @@ export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
                     }
                 </Container>
             :
-                <FilmDetails details={details} credits={credits[0]} />
+                <FilmDetails details={details} filmID={filmID} />
         }
         </>
     )

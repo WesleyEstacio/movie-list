@@ -12,19 +12,15 @@ interface FilmDetailsProps {
         runtime: number
     }
 
-    credits: {
-        original_name: string,
-        character: string,
-        profile_path: string,
-    }
+    filmID: number
 }
 
-export function FilmDetails({ details, credits }: FilmDetailsProps) {
+export function FilmDetails({ details, filmID }: FilmDetailsProps) {
 
     return (
         <>
             <FilmDetailsHeader details={details}/>
-            <Squad credits={credits}/>
+            <Squad filmID={filmID} />
             <Trailer />
         </>
     )
