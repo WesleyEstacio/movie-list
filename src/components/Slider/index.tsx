@@ -3,7 +3,15 @@ import "react-alice-carousel/lib/alice-carousel.css";
 
 import logo from '../../assets/teste.png'
 
-export function Slider() {
+interface SliderProps {
+    credits: {
+        original_name: string,
+        character: string,
+        profile_path: string,
+    }
+}
+
+export function Slider({credits}: SliderProps) {
 
     const responsive = {
         0: { items: 1 },
@@ -12,12 +20,10 @@ export function Slider() {
     };
     
     const items = [
-        <div className="item carousel" data-value="1"><img src={logo} /> <p>Ryan Reynolds</p> <p>Wade Wilson / Deadpool</p></div>,
-        <div className="item carousel" data-value="1"><img src={logo} /> <p>Ryan Reynolds</p> <p>Wade Wilson / Deadpool</p></div>,
-        <div className="item carousel" data-value="1"><img src={logo} /> <p>Ryan Reynolds</p> <p>Wade Wilson / Deadpool</p></div>,
-        <div className="item carousel" data-value="1"><img src={logo} /> <p>Ryan Reynolds</p> <p>Wade Wilson / Deadpool</p></div>,
-        <div className="item carousel" data-value="1"><img src={logo} /> <p>Ryan Reynolds</p> <p>Wade Wilson / Deadpool</p></div>,
-        <div className="item carousel" data-value="1"><img src={logo} /> <p>Ryan Reynolds</p> <p>Wade Wilson / Deadpool</p></div>,
+        <div className="item carousel" data-value="1"><img src={`https://image.tmdb.org/t/p/w500/${credits.profile_path}`} /> 
+            <p>{credits.original_name}</p> 
+            <p>{credits.character}</p>
+        </div>,
     ];
 
     return (
