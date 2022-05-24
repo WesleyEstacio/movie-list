@@ -61,7 +61,7 @@ export const Content = styled.header`
             grid-template-columns: repeat(3, 1fr);
 
             div {
-                margin-bottom: 2rem;
+                margin-bottom: 4rem;
                 
                 p {
                     padding-top: 0.25rem;
