@@ -33,7 +33,8 @@ export function Slider({ filmID }: SliderProps) {
     };
     
     const items = credits.map(actors => 
-        <div className="item carousel" data-value="1"><img src={`https://image.tmdb.org/t/p/w500/${actors.profile_path}`} /> 
+        <div className="item carousel" data-value="1">
+            <img src={`https://image.tmdb.org/t/p/w500/${actors.profile_path}`} alt="Foto do Ator/Atriz" /> 
             <p>{actors.original_name}</p> 
             <p>{actors.character}</p>
         </div>,

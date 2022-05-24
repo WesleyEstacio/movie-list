@@ -15,6 +15,7 @@ export const Container = styled.div`
         background-color: #fff;
         padding: 1.2rem 1rem;
         margin: 0 0.5rem;
+        min-height: 300px;
 
         p {
             text-align: left;
