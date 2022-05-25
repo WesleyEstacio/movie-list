@@ -35,8 +35,6 @@ export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
         })
     }, [filmID])
 
-    
-
     return (
         <>
         {!isOpenDetail

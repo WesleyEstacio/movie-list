@@ -23,8 +23,11 @@ export function Slider({ filmID }: SliderProps) {
         .then(response => response.json())
         .then(data => {
             setCredits(data.cast)
+            console.log(data)
         })
     }, [filmID])
+
+    
 
     const responsive = {
         0: { items: 1 },
@@ -42,10 +45,8 @@ export function Slider({ filmID }: SliderProps) {
 
     return (
         <AliceCarousel
-                mouseTracking
                 items={items}
                 responsive={responsive}
-                controlsStrategy="default"
                 autoPlay={true}
                 infinite={true}
                 autoPlayInterval={2000}

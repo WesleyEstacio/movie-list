@@ -28,11 +28,13 @@ export const Content = styled.header`
 
         > p:nth-of-type(1) {
             padding: 0.75rem 0;
+            margin-top: 0.5rem;
         }
 
         > article:nth-of-type(1) {
             display: flex;
             align-items: center;
+            margin: 2rem 0;
 
             h3 {
                 border: 5px solid #14FF00;
@@ -47,26 +49,14 @@ export const Content = styled.header`
         }
 
         > h3 {
-            margin: 1.5rem 0 0.5rem;
+            margin: 3rem 0 0.5rem;
+            font-size: 1.5rem;
         }
 
         > p {
             line-height: 1.3rem;
             text-align: justify;
-        }
-
-        > article:nth-of-type(2) {
-            margin-top: 2rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-
-            div {
-                margin-bottom: 4rem;
-                
-                p {
-                    padding-top: 0.25rem;
-                }
-            }
+            font-weight: lighter;
         }
 
     }

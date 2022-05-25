@@ -35,33 +35,6 @@ export function FilmDetailsHeader({ details }: FilmDetailsProps) {
 
                     <h3>Sinopse</h3>
                     <p>{details.overview}</p>
-
-                    <article>
-                        <div>
-                            <h4>Rob Liefeld</h4>
-                            <p>Characters</p>
-                        </div>
-
-                        <div>
-                            <h4>Rob Liefeld</h4>
-                            <p>Characters</p>
-                        </div>
-
-                        <div>
-                            <h4>Rob Liefeld</h4>
-                            <p>Characters</p>
-                        </div>
-
-                        <div>
-                            <h4>Rob Liefeld</h4>
-                            <p>Characters</p>
-                        </div>
-
-                        <div>
-                            <h4>Rob Liefeld</h4>
-                            <p>Characters</p>
-                        </div>
-                    </article>
                 </section>
             </Content>
         </Container>
