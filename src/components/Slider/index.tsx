@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
-import logo from '../../assets/teste.png'
-
 interface Credits {
     original_name: string,
     character: string,
@@ -11,20 +9,20 @@ interface Credits {
 }
 
 interface SliderProps {
-    filmID: number
+    movieID: number
 }
 
-export function Slider({ filmID }: SliderProps) {
+export function Slider({ movieID }: SliderProps) {
 
     const [credits, setCredits] = useState<Credits[]>([])
 
     useEffect(()=> {
-        fetch(`https://api.themoviedb.org/3/movie/${filmID}/credits?api_key=c908cc361daab221ef316ddff3c6e5dc`)
+        fetch(`https://api.themoviedb.org/3/movie/${movieID}/credits?api_key=c908cc361daab221ef316ddff3c6e5dc`)
         .then(response => response.json())
         .then(data => {
             setCredits(data.cast)
         })
-    }, [filmID])
+    }, [movieID])
 
     
 

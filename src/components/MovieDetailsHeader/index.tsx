@@ -1,6 +1,6 @@
 import { Container, Content } from './styles'
 
-interface FilmDetailsProps {
+interface MovieDetailsProps {
     details: {
         title: string,
         release_date: string,
@@ -18,7 +18,7 @@ interface FilmDetailsProps {
     }
 }
 
-export function FilmDetailsHeader({ details }: FilmDetailsProps) {   
+export function MovieDetailsHeader({ details }: MovieDetailsProps) {   
 
     const date = new Date(details.release_date)
 

@@ -2,15 +2,15 @@ import { Slider } from "../Slider";
 import { Container } from "./styles";
 
 interface SquadProps {
-    filmID: number
+    movieID: number
 }
 
-export function Squad({ filmID }: SquadProps) {
+export function Squad({ movieID }: SquadProps) {
 
     return (
         <Container>
             <h1>Elenco original </h1>
-            <Slider filmID={filmID}/>
+            <Slider movieID={movieID}/>
         </Container>
     )
 }

@@ -1,27 +1,26 @@
-import { FilmDetails } from "./components/FilmDetails";
-import { FilmList } from "./components/FilmList";
-import { FilmsContext, FilmsProvider } from "./FilmsContext";
+import { useState } from "react";
 import { Footer } from "./components/Footer";
 import { HeaderContent } from "./components/HeaderContent";
 import { HeaderLogo } from "./components/HeaderLogo";
+import { MovieList } from "./components/MovieList";
+import { MoviesProvider } from "./MoviesContext";
 import { GlobalStyle } from "./styles/Global";
-import { useState } from "react";
 
 export function App() {
 
   const [isOpenDetails, setIsOpenDetails] = useState(false);
 
-  function handleOpenFilmDetail(){
+  function handleOpenMovieDetail(){
     setIsOpenDetails(true)
   }
 
-  function handleCloseFilmDetail(){
+  function handleCloseMovieDetail(){
     setIsOpenDetails(false)
   }
 
   return (
-    <FilmsProvider>
-      <HeaderLogo onCloseFilmDetail={handleCloseFilmDetail}/>
+    <MoviesProvider>
+      <HeaderLogo onCloseMovieDetail={handleCloseMovieDetail}/>
 
       {!isOpenDetails 
         ?
@@ -29,8 +28,8 @@ export function App() {
         :
         <></>
       }
-      <FilmList 
-        onOpenFilmDetail={handleOpenFilmDetail}
+      <MovieList 
+        onOpenMovieDetail={handleOpenMovieDetail}
         isOpenDetail={isOpenDetails}
       />
 
@@ -43,6 +42,6 @@ export function App() {
       
         
       <GlobalStyle />
-    </FilmsProvider>  
+    </MoviesProvider>  
   )
 }

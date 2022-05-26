@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
 import { Container } from "./styles";
 
 interface TrailerProps {
-    filmID: number
+    movieID: number
 
     details: {
         backdrop_path: string,
     }
 }
-
 
 export function Trailer({ details }: TrailerProps) {
 

@@ -1,8 +1,8 @@
-import { FilmDetailsHeader } from "../FilmDetailsHeader";
+import { MovieDetailsHeader } from "../MovieDetailsHeader";
 import { Squad } from "../Squad";
-import { Trailer } from "../Trailer/Trailer";
+import { Trailer } from "../Trailer";
 
-interface FilmDetailsProps {
+interface MovieDetailsProps {
     details: {
         title: string,
         release_date: string,
@@ -20,16 +20,16 @@ interface FilmDetailsProps {
         ]
     }
 
-    filmID: number
+    movieID: number
 }
 
-export function FilmDetails({ details, filmID }: FilmDetailsProps) {
+export function MovieDetails({ details, movieID }: MovieDetailsProps) {
 
     return (
         <>
-            <FilmDetailsHeader details={details} />
-            <Squad filmID={filmID} />
-            <Trailer filmID={filmID} details={details} />
+            <MovieDetailsHeader details={details} />
+            <Squad movieID={movieID} />
+            <Trailer movieID={movieID} details={details} />
         </>
     )
 }

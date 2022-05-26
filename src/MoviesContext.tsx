@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-interface Films {
+interface Movies {
     id: number,
     title: string,
     release_date: string,
@@ -8,26 +8,26 @@ interface Films {
     vote_average: number
 }
 
-interface FilmsProviderProps {
+interface MoviesProviderProps {
     children: ReactNode
 }
 
-export const FilmsContext = createContext<Films[]>([]);
+export const MoviesContext = createContext<Movies[]>([]);
 
-export function FilmsProvider({ children }: FilmsProviderProps) {
-    const [films,setFilms] = useState<Films[]>([])
+export function MoviesProvider({ children }: MoviesProviderProps) {
+    const [movies,setMovies] = useState<Movies[]>([])
 
     useEffect( ()=> {
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=c908cc361daab221ef316ddff3c6e5dc&language=PT-BR')
         .then(response => response.json())
         .then(data => {
-            setFilms(data.results)
+            setMovies(data.results)
         })
     }, [])
 
     return (
-        <FilmsContext.Provider value={films}>
+        <MoviesContext.Provider value={movies}>
             {children}
-        </FilmsContext.Provider>
+        </MoviesContext.Provider>
     )
 }

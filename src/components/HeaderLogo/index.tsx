@@ -2,17 +2,17 @@ import logo from '../../assets/logo.svg'
 import { Container, Content } from './styles'
 
 interface HeaderLogoProps {
-    onCloseFilmDetail: () => void
+    onCloseMovieDetail: () => void
 }
 
-export function HeaderLogo({ onCloseFilmDetail }: HeaderLogoProps ) {
+export function HeaderLogo({ onCloseMovieDetail }: HeaderLogoProps ) {
     return (
         <Container>
             <Content>
                 <img 
                     src={logo} 
                     alt="TMDB Logo"
-                    onClick={onCloseFilmDetail} 
+                    onClick={onCloseMovieDetail} 
                 />
             </Content>
         </Container>  
