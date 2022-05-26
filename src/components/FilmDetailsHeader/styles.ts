@@ -50,11 +50,11 @@ export const Content = styled.header`
 
         > h3 {
             margin: 3rem 0 0.5rem;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
         }
 
         > p {
-            line-height: 1.3rem;
+            line-height: 1.4rem;
             text-align: justify;
             font-weight: lighter;
         }

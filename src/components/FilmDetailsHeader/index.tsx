@@ -8,10 +8,18 @@ interface FilmDetailsProps {
         overview: string,
         
         runtime: number,
+
+        genres: [
+            {
+                name: string
+            }
+        ]
     }
 }
 
 export function FilmDetailsHeader({ details }: FilmDetailsProps) {   
+
+    const date = new Date(details.release_date)
 
     return (
         <Container>
@@ -22,11 +30,11 @@ export function FilmDetailsHeader({ details }: FilmDetailsProps) {
                     <h2>{details.title}</h2>
                     
                     <p>
-                        FAIXA ETARIA  • 
-                        {details.release_date} (BR)  •  
-                        TIPO  • 
-                        {details.runtime} Minutos
+                        FAIXA ETARIA Anos , {new Intl.DateTimeFormat().format(date)} (BR) {details.genres.map(genres => <span> {genres.name}, </span>)} {details.runtime} Minutos.
                     </p>
+
+
+                    
 
                     <article>
                         <h3>76%</h3>

@@ -9,7 +9,13 @@ interface FilmDetailsProps {
         poster_path: string,
         overview: string,
 
-        runtime: number
+        runtime: number,
+
+        genres: [
+            {
+                name: string
+            }
+        ]
     }
 
     filmID: number
@@ -19,7 +25,7 @@ export function FilmDetails({ details, filmID }: FilmDetailsProps) {
 
     return (
         <>
-            <FilmDetailsHeader details={details}/>
+            <FilmDetailsHeader details={details} />
             <Squad filmID={filmID} />
             <Trailer />
         </>

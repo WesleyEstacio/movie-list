@@ -16,6 +16,12 @@ interface Details {
     overview: string,
 
     runtime: number,
+
+    genres: [
+        {
+            name: string
+        }
+    ]
 }
 
 
