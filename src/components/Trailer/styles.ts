@@ -10,6 +10,6 @@ export const Container = styled.div`
     }
 
     img {
-        width: 60%;
+        margin-bottom: 2rem;
     }
 `

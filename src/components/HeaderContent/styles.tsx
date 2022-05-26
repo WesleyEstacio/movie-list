@@ -7,6 +7,7 @@ export const Container = styled.header`
 export const Content = styled.div`
     max-width: 1100px;
     margin: 0 auto;
+    padding-top: 1.5rem;
     min-height: 450px;
     display: flex;
     justify-content: space-evenly;
