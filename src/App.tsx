@@ -22,15 +22,26 @@ export function App() {
   return (
     <FilmsProvider>
       <HeaderLogo onCloseFilmDetail={handleCloseFilmDetail}/>
-        
-      <HeaderContent />
+
+      {!isOpenDetails 
+        ?
+        <HeaderContent />
+        :
+        <></>
+      }
       <FilmList 
         onOpenFilmDetail={handleOpenFilmDetail}
         isOpenDetail={isOpenDetails}
       />
-      <Footer />
-        
 
+      {!isOpenDetails 
+        ?
+        <Footer />
+        :
+        <></>
+      }
+      
+        
       <GlobalStyle />
     </FilmsProvider>  
   )

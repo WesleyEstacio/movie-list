@@ -9,6 +9,7 @@ interface FilmDetailsProps {
         poster_path: string,
         overview: string,
         vote_average: number,
+        backdrop_path: string,
 
         runtime: number,
 
@@ -28,7 +29,7 @@ export function FilmDetails({ details, filmID }: FilmDetailsProps) {
         <>
             <FilmDetailsHeader details={details} />
             <Squad filmID={filmID} />
-            <Trailer />
+            <Trailer filmID={filmID} details={details} />
         </>
     )
 }

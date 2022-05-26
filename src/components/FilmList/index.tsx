@@ -14,7 +14,8 @@ interface Details {
     release_date: string,
     poster_path: string,
     overview: string,
-    vote_average: number
+    vote_average: number,
+    backdrop_path: string,
 
     runtime: number,
 
@@ -38,8 +39,6 @@ export function FilmList({ onOpenFilmDetail, isOpenDetail }: FilmListProps) {
             setDetails(data)
         })
     }, [filmID])
-
-    console.log(films)
 
     return (
         <>

@@ -8,4 +8,8 @@ export const Container = styled.div`
     h1 {
         padding: 1rem 0;
     }
+
+    img {
+        width: 60%;
+    }
 `

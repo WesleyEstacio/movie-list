@@ -23,7 +23,6 @@ export function Slider({ filmID }: SliderProps) {
         .then(response => response.json())
         .then(data => {
             setCredits(data.cast)
-            console.log(data)
         })
     }, [filmID])
 
