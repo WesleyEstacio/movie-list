@@ -39,7 +39,7 @@ export const Content = styled.header`
             h3 {
                 border: 5px solid #14FF00;
                 border-radius: 50%;
-                padding: 1rem 0.5rem;
+                padding: 0.7rem;
             }
             
             span {

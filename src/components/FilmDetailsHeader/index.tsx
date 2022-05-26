@@ -6,6 +6,7 @@ interface FilmDetailsProps {
         release_date: string,
         poster_path: string,
         overview: string,
+        vote_average: number
         
         runtime: number,
 
@@ -30,14 +31,11 @@ export function FilmDetailsHeader({ details }: FilmDetailsProps) {
                     <h2>{details.title}</h2>
                     
                     <p>
-                        FAIXA ETARIA Anos , {new Intl.DateTimeFormat().format(date)} (BR) {details.genres.map(genres => <span> {genres.name}, </span>)} {details.runtime} Minutos.
+                        {new Intl.DateTimeFormat().format(date)} (BR) {details.genres.map(genres => <span key={genres.name}> {genres.name}, </span>)} {details.runtime} Minutos.
                     </p>
 
-
-                    
-
                     <article>
-                        <h3>76%</h3>
+                        <h3>{details.vote_average}</h3>
                         <span>Avaliação dos usuários</span>
                     </article>
 
